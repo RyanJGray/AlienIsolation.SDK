@@ -29,7 +29,7 @@ namespace CATHODE
 		*/
 		struct Enum
 		{
-			unsigned int enum_short_guid = 0;
+			ShortGuid enum_short_guid = 0;
 			int enum_value_index = 0;
 		};
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AlienIsolation.SDK.hpp"
 #include "CATHODE.h"
 
 namespace CATHODE::EntityInterface
@@ -7,73 +8,61 @@ namespace CATHODE::EntityInterface
 	// Stores an EntityInterface pointer that we've stolen from the game calling an EntityInterface member function.
 	//static void* g_thisPtr;
 
-	/**
-	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
-	 * \param _this This pointer, must point to an instance of EntityInterface.
-	 * \param _EDX Can be ignored, must be included when calling thiscall functions.
-	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
-	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
-	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
-	 * \return False if the parameter cannot be found, True if the parameter can be found.
-	 * \remark Prototype: bool __thiscall CATHODE::EntityInterface::find_parameter<CATHODE::String>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CATHODE::String&) const
-	 */
-	bool __fastcall hFindParameterString(void* _this, void* _EDX, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::String& output_ptr);
-	typedef bool(__thiscall* tFindParameterString)(void* _this, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::String& output_ptr);
-	inline tFindParameterString FindParameterString = reinterpret_cast<tFindParameterString>(0x005991A0);
+	//typedef void(__cdecl* t_call_triggers)(const DataTypes::MemoryPtr& entity, const DataTypes::ShortGuid& shortguid, const DataTypes::MemoryRefPtr& trigger_info, double unk);
+	//inline auto call_triggers = reinterpret_cast<t_call_triggers>(DEVTOOLS_RELATIVE_ADDRESS(0x004bd920));
 
 	/**
 	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
 	 * \param _this This pointer, must point to an instance of EntityInterface.
-	 * \param _EDX Can be ignored, must be included when calling thiscall functions.
 	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
 	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
 	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
 	 * \return False if the parameter cannot be found, True if the parameter can be found.
-	 * \remark Prototype: bool __thiscall CATHODE::EntityInterface::find_parameter<bool>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, bool&) const
+	 * \remark Prototype: bool CATHODE::EntityInterface::find_parameter<CATHODE::String>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CATHODE::String&) const
 	 */
-	bool __fastcall hFindParameterBool(void* _this, void* _EDX, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, bool& output_ptr);
-	typedef bool(__thiscall* tFindParameterBool)(void* _this, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, bool& output_ptr);
-	inline tFindParameterBool FindParameterBool = reinterpret_cast<tFindParameterBool>(0x00630590);
+	AI_SDK_DECLARE_CLASS_FUNC(bool, find_parameter<DataTypes::String>, t_find_parameter<DataTypes::String>, 0x001991a0, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::String& output_ptr);
 
 	/**
 	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
 	 * \param _this This pointer, must point to an instance of EntityInterface.
-	 * \param _EDX Can be ignored, must be included when calling thiscall functions.
 	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
 	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
 	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
 	 * \return False if the parameter cannot be found, True if the parameter can be found.
-	 * \remark Prototype: bool __thiscall CATHODE::EntityInterface::find_parameter<CA::Vector>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CA::Vector&) const
+	 * \remark Prototype: bool CATHODE::EntityInterface::find_parameter<bool>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, bool&) const
 	 */
-	bool __fastcall hFindParameterVector(void* _this, void* _EDX, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Vector& output_ptr);
-	typedef bool(__thiscall* tFindParameterVector)(void* _this, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Vector& output_ptr);
-	inline tFindParameterVector FindParameterVector = reinterpret_cast<tFindParameterVector>(0x008D63C0);
+	AI_SDK_DECLARE_CLASS_FUNC(bool, find_parameter<bool>, t_find_parameter<bool>, 0x00230590, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, bool& output_ptr);
 
 	/**
 	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
 	 * \param _this This pointer, must point to an instance of EntityInterface.
-	 * \param _EDX Can be ignored, must be included when calling thiscall functions.
 	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
 	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
 	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
 	 * \return False if the parameter cannot be found, True if the parameter can be found.
-	 * \remark Prototype: bool __thiscall CATHODE::EntityInterface::find_parameter<float>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, float&) const
+	 * \remark Prototype: bool CATHODE::EntityInterface::find_parameter<CA::Vector>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CA::Vector&) const
 	 */
-	bool __fastcall hFindParameterFloat(void* _this, void* _EDX, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, float& output_ptr);
-	typedef bool(__thiscall* tFindParameterFloat)(void* _this, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, float& output_ptr);
-	inline tFindParameterFloat FindParameterFloat = reinterpret_cast<tFindParameterFloat>(0x008D6510);
+	AI_SDK_DECLARE_CLASS_FUNC(bool, find_parameter<DataTypes::Vector>, t_find_parameter<DataTypes::Vector>, 0x004d63c0, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Vector& output_ptr);
 
 	/**
 	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
 	 * \param _this This pointer, must point to an instance of EntityInterface.
-	 * \param _EDX Can be ignored, must be included when calling thiscall functions.
 	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
 	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
 	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
 	 * \return False if the parameter cannot be found, True if the parameter can be found.
-	 * \remark Prototype: bool __thiscall CATHODE::EntityInterface::find_parameter<CATHODE::Enum>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CATHODE::Enum&) const
+	 * \remark Prototype: bool CATHODE::EntityInterface::find_parameter<float>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, float&) const
 	 */
-	bool __fastcall hFindParameterEnum(void* _this, void* _EDX, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Enum& output_ptr);
-	typedef bool(__thiscall* tFindParameterEnum)(void* _this, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Enum& output_ptr);
-	inline tFindParameterEnum FindParameterEnum = reinterpret_cast<tFindParameterEnum>(0x008D6620);
+	AI_SDK_DECLARE_CLASS_FUNC(bool, find_parameter<float>, t_find_parameter<float>, 0x004d6510, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, float& output_ptr);
+
+	/**
+	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
+	 * \param _this This pointer, must point to an instance of EntityInterface.
+	 * \param entity_ptr Pointer to the CATHODE::Entity object that you want a parameter value from.
+	 * \param shortguid_ptr Pointer to the parameter's ShortGuid.
+	 * \param output_ptr Pointer to the variable that you want the parameter's value to be stored inside.
+	 * \return False if the parameter cannot be found, True if the parameter can be found.
+	 * \remark Prototype: bool CATHODE::EntityInterface::find_parameter<CATHODE::Enum>(CATHODE::MemoryPtr<CATHODE::Entity> const&, CATHODE::ShortGuid const&, CATHODE::Enum&) const
+	 */
+	AI_SDK_DECLARE_CLASS_FUNC(bool, find_parameter<DataTypes::Enum>, t_find_parameter<DataTypes::Enum>, 0x004d6620, const DataTypes::MemoryPtr& entity_ptr, const DataTypes::ShortGuid& shortguid_ptr, DataTypes::Enum& output_ptr);
 }

@@ -1,10 +1,9 @@
 #pragma once
 
-#include "CATHODE.h"
+#include "AlienIsolation.SDK.hpp"
 
 namespace GameFlow
 {
-	void __fastcall h_start_gameplay(void* _this, void* _EDX, int play_mode, const char* level_name);
-	typedef void(__thiscall* t_start_gameplay)(void*, int, const char*);
-	inline t_start_gameplay start_gameplay = reinterpret_cast<t_start_gameplay>(0x007BCB00);
+	// void start_gameplay(void* _this, int play_mode, const char* level_name)
+	AI_SDK_DECLARE_CLASS_FUNC(void, start_gameplay, t_start_gameplay, 0x003bcb00, int play_mode, const char* level_name);
 }
