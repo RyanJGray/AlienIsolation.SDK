@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DevTools.h"
+#include "AlienIsolation.SDK.hpp"
 #include "CATHODE.h"
 
 namespace CATHODE::Entity

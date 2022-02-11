@@ -14,7 +14,7 @@ namespace CATHODE
 		//StringTable* create_instance();
 
 		// Singleton instance.
-		static StringTable* m_instance = DEVTOOLS_RELATIVE_ADDRESS(0x0134ef78);
+		static StringTable* m_instance = AI_SDK_RELATIVE_ADDRESS(0x0134ef78);
 		
 		// Not a CATHODE provided function, just a helper that I've added.
 		static StringTable* get_instance();

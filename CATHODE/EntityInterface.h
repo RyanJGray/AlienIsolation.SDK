@@ -9,7 +9,7 @@ namespace CATHODE::EntityInterface
 	//static void* g_thisPtr;
 
 	//typedef void(__cdecl* t_call_triggers)(const DataTypes::MemoryPtr& entity, const DataTypes::ShortGuid& shortguid, const DataTypes::MemoryRefPtr& trigger_info, double unk);
-	//inline auto call_triggers = reinterpret_cast<t_call_triggers>(DEVTOOLS_RELATIVE_ADDRESS(0x004bd920));
+	//inline auto call_triggers = reinterpret_cast<t_call_triggers>(AI_SDK_RELATIVE_ADDRESS(0x004bd920));
 
 	/**
 	 * \brief Finds and returns the parameter attached to a CATHODE::Entity object, when passed the parameter's ShortGuid.
