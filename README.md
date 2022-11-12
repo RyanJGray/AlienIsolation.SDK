@@ -10,6 +10,7 @@ This project only provides C/C++ header files containing data type definitions, 
 
 ## Status
 **[12-11-2022]** The SDK is not working in the way I intended it to, I'm working on an update for the SDK right now. There should be more details available early next year. Thanks to information left in one of the ports of _Alien: Isolation_, I'm now able to refactor the folder structure to more closely match, what the original source tree would've looked like.
+
 **[24-01-2022]** This project is in its early stages. I'm slowly reversing classes back to C/C++ headers as I come across them.
 
 ## End Goal
