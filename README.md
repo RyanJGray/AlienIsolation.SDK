@@ -20,7 +20,7 @@ You can use the function addresses provided by this project to detour (hook / hi
 
 With this level of control over the game, it becomes possible to change the state of the game in real-time.
 
-There will, of course, be limitations because of the original code that was written by Creative Assembly. There is not much that we can do about this, as the game's source code is not open-source or in the public domain.
+There will, of course, be limitations because of the original code that was written by Creative Assembly. There is not much that we can do about this, as the game and its engine are not open-source.
 
 ---
 
