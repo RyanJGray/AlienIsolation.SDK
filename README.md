@@ -9,7 +9,9 @@ It's important to note that this project **does not** provide reverse-engineered
 This project only provides C/C++ header files containing data type definitions, function prototypes and memory addresses for functions contained within the Steam release of the game.
 
 ## Status
-**[24-01-2022]** This project is in its early stages. I'm slowly reversing classes back to C/C++ headers as I come across them.
+**[07-04-2023]** This project is in its early stages. I'm slowly reversing classes back to C++ headers as I come across them. I've discovered a way of replicating something close to CA's original source tree, for the game and its various first-party libraries.
+
+Most of the header files that you see in the repo are empty, just placeholders for now, but will gradually get filled in.
 
 ## End Goal
 Ideally, this SDK would be used to mod the game in ways that aren't possible via traditional game file mods.
@@ -19,3 +21,7 @@ You can use the function addresses provided by this project to detour (hook / hi
 With this level of control over the game, it becomes possible to change the state of the game in real-time.
 
 There will, of course, be limitations because of the original code that was written by Creative Assembly. There is not much that we can do about this, as the game's source code is not open-source or in the public domain.
+
+---
+
+**This project is not affiliated with (or endorsed by), SEGA and/or Creative Assembly.**
